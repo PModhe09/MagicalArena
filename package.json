@@ -1,0 +1,11 @@
+{
+  "name": "magicalarena",
+  "version": "1.0.0",
+  "description": "An arena where 2 players can fight at a time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prathmesh Modhe",
+  "license": "ISC"
+}
