@@ -8,6 +8,14 @@ const main = async() =>{
        const option = await inputInteger("Choose Option : ");
        if(option === 1){
            arena.DisplayPlayers();
+           if(arena.getPlayersCount() < 2){
+             console.log("How can One and Zero Player fight ? . Enter More Players xD");
+           }
+           else{
+              const id1 = await inputInteger("Enter ID of Fighter 1 : ");
+              const id2 = await inputInteger("Enter ID of Fighter 2 : ");
+              arena.Battle(id1,id2);
+           }
            console.log("Battle Started : ");
        }
        else if(option === 2){
