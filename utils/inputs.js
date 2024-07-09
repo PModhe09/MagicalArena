@@ -14,8 +14,8 @@ async function inputInteger(inputMessage){
           if (!isNaN(userInput)) {
             resolve(userInput);
           } else {
-            console.log("invalid Input, Please enter an Integer.");
-            resolve(await inputIntegerFromUser(inputMessage)); 
+            console.log("Invalid Input, Please enter an Integer.");
+            resolve(await inputInteger(inputMessage)); 
           }
         });
       });
@@ -38,12 +38,12 @@ async function inputString(inputMessage){
 
 async function inputPlayerDetails(){
     
-    const name = inputString("Enter New Player's Name");
-    const health = inputInteger(`Enter ${name}'s Health value`);
-    const attack = inputInteger(`Enter ${name}'s Attack value`);
-    const strength = inputInteger(`Enter ${name}'s Strength value`);
+    const name = await inputString("Enter New Player's Name : ");
+    const health = await inputInteger(`Enter ${name}'s Health value : `);
+    const attack = await inputInteger(`Enter ${name}'s Attack value : `);
+    const strength = await inputInteger(`Enter ${name}'s Strength value : `);
 
     return {name,health,attack,strength};
 }
 
-module.exports = {inputInteger,inputString,inputPlayerDetails};
+module.exports = {inputInteger,inputString, inputPlayerDetails};
