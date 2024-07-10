@@ -19,7 +19,7 @@ class Arena{
         return this.players.has(id);
     }
 
-    DisplayPlayers(){
+    displayPlayers(){
         console.log('|\tId\t|\tName\t|\tHealth\t|\tStrength|\tAttack\t|');
         for (const [id, player] of this.players) {
             const { name, health, strength, attack } = player;
@@ -28,11 +28,7 @@ class Arena{
          console.log('\n');
     }
 
-    AddPlayer(name, health, attack, strength){
-        if(name.length === 0 || name === null){
-            console.log("Please Enter name")
-            return -1;
-        }
+    addPlayer(name, health, attack, strength){
         if(health <= 0){
             console.log("Please enter health value greater than 0");
             return -1;
@@ -54,15 +50,18 @@ class Arena{
         return id;
     }
 
-    Battle(id1,id2){
+    battle(id1,id2){
          if(id1 === id2){
             console.log("Id's can not be same! A player can not fight with itself.");
+            return {};
          }
          else if(!this.players.has(id1)){
             console.log(`Entered ID : ${id1} does not exist. Please entered a valid ID.`);
+            return {};
          }
          else if(!this.players.has(id2)){
             console.log(`Entered ID : ${id1} does not exist. Please entered a valid ID.`);
+            return {};
          }
          else{
             let attacker = this.players.get(id1);
@@ -97,6 +96,7 @@ class Arena{
 
             console.log(`Winner of this Battle is ${attacker.name}`);
             console.log(`${attacker.name} Health was ${attacker.health} when he Defeated ${defender.name}`);
+            return  {winner: attacker.id, loser: defender.id};
          }
     }
 

@@ -1,5 +1,5 @@
 const Arena = require('./modules/arena');
-const {inputInteger, inputString, inputPlayerDetails} = require('./utils/inputs');
+const {inputInteger, inputPlayerDetails} = require('./utils/inputs');
 
 const main = async() =>{
     const arena = new Arena();
