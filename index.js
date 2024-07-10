@@ -12,7 +12,7 @@ const main = async() =>{
 
        if(option === 1){
 
-           arena.DisplayPlayers();
+           arena.displayPlayers();
 
            if(arena.getPlayersCount() < 2){
              console.log("How can One and Zero Player fight ? . Enter More Players xD");
@@ -20,7 +20,7 @@ const main = async() =>{
            else{
               const id1 = await inputInteger("Enter ID of Fighter 1 : ");
               const id2 = await inputInteger("Enter ID of Fighter 2 : ");
-              arena.Battle(id1,id2);
+              arena.battle(id1,id2);
            }
            console.log("Battle Started : ");
        }
@@ -29,7 +29,7 @@ const main = async() =>{
            console.log("Enter Details to Enter New Player in Arena : ");
            const playerDetails = await inputPlayerDetails();
            const {name, health, attack, strength} = playerDetails;
-           arena.AddPlayer(name,health,attack,strength);
+           arena.addPlayer(name,health,attack,strength);
        }
 
        else if(option === 3){
@@ -40,7 +40,7 @@ const main = async() =>{
        else{
            console.log("Please Enter a valid option.")
        }
-       
+
     }
 }
 
