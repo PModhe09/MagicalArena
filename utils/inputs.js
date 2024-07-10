@@ -1,5 +1,6 @@
 const readline = require('readline');
 
+// for taking an integer as input
 async function inputInteger(inputMessage){
 
     const rl = readline.createInterface({
@@ -21,6 +22,7 @@ async function inputInteger(inputMessage){
       });
 }
 
+// for taking a string as input
 async function inputString(inputMessage){
 
     const rl = readline.createInterface({
@@ -36,6 +38,7 @@ async function inputString(inputMessage){
       });
 }
 
+// function for taking player details as input
 async function inputPlayerDetails(){
     
     const name = await inputString("Enter New Player's Name : ");
